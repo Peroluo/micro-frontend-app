@@ -1,0 +1,73 @@
+{
+  "name": "micro-frontend-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "yuumi serve",
+    "build": "cross-env front_env=production yuumi build",
+    "production": "node ./bin/server.js",
+    "example": "yuumi serve ./example/index.tsx",
+    "cdn_upload": "./script/upload.sh",
+    "lint-fix": "eslint ./src --fix --ext  .js,.tsx,ts && stylelint \"src/**/*.scss\" --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && env-status-version-validate",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,ts,tsx}": [
+        "eslint",
+        "git add"
+      ],
+      "*.{css,scss}": [
+        "stylelint"
+      ]
+    },
+    "ignore": [
+      "bin/server.js",
+      "src/lib/**/*",
+      "mlz-pack.js",
+      "*.test.(j|t)s"
+    ]
+  },
+  "dependencies": {
+    "@cmao/mlz-config": "^1.0.2",
+    "qiankun": "^2.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@frontend/yuumi": "0.3.0",
+    "@mlz/lint": "^1.1.10",
+    "@mlz/pack": "1.0.19",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^12.6.2",
+    "@types/react-css-modules": "^4.6.2",
+    "@types/react-dom": "^16.9.2",
+    "@types/react-loadable": "^5.5.2",
+    "@types/react-redux": "^7.1.4",
+    "@types/react-router": "^5.0.3",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/qrcode": "^1.3.5",
+    "compression": "^1.7.4",
+    "cross-env": "^5.2.1",
+    "env-status": "^0.30.0",
+    "express": "^4.17.1",
+    "fontmin": "^0.9.8",
+    "husky": "^3.0.9",
+    "lint-staged": "^8.0.4",
+    "lodash-webpack-plugin": "^0.11.6",
+    "mlz-lint": "^1.0.2",
+    "stylelint": "^13.12.0",
+    "typescript": "^3.5.3"
+  }
+}

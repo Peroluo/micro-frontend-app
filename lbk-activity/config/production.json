@@ -1,0 +1,19 @@
+{
+    "env": "production",
+    "buildtime": {
+      "https": false,
+      "cdn_path": "",
+      "originServer": {
+        "ip": "0.0.0.0",
+        "port": "7102"
+      },
+      "assetsPublicPath":"/lbk-activity-service",
+      "publicPath":"/lbk-activity-service",
+      "debug": false,
+      "hot": false,
+      "sourceMap": "http://localhost:7102/",
+      "uglify": true,
+      "analyze": false
+    },
+    "runtime":{}
+  }

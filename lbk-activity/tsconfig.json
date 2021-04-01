@@ -1,0 +1,25 @@
+{
+  "extends": "./node_modules/@mlz/lint/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"],
+      "example/*": ["example/*"]
+    }
+  },
+  "files": [
+    "./js_transition.d.ts"
+  ],
+  "include": [
+    "src/**/*",
+    "example/**/*",
+    "../../common"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "awesomeTypescriptLoaderOptions": { // 加速编译
+    "useBabel": true
+  }
+}

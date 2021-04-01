@@ -1,0 +1,108 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/peroluo/github/micro-frontend-app/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/peroluo/github/micro-frontend-app/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://gitlab.codemao.cn/api/v4/projects/509/packages/npm/@frontend/yuumi/-/@frontend/yuumi-0.3.0.tgz: Request failed "404 Not Found"
+      at ResponseError.ExtendableBuiltin (/usr/local/lib/node_modules/yarn/lib/cli.js:696:66)
+      at new ResponseError (/usr/local/lib/node_modules/yarn/lib/cli.js:802:124)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:67058:16)
+      at Request.emit (events.js:315:20)
+      at Request.module.exports.Request.onRequestResponse (/usr/local/lib/node_modules/yarn/lib/cli.js:141539:10)
+      at ClientRequest.emit (events.js:315:20)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:641:27)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:126:17)
+      at HTTPParser.execute (<anonymous>)
+      at TLSSocket.socketOnData (_http_client.js:509:22)
+
+npm manifest: 
+  {
+    "name": "micro-frontend-app",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+      "start": "yuumi serve",
+      "build": "yuumi build",
+      "production": "node ./bin/server.js",
+      "example": "yuumi serve ./example/index.tsx",
+      "cdn_upload": "./script/upload.sh",
+      "lint-fix": "eslint ./src --fix --ext  .js,.tsx,ts && stylelint \"src/**/*.scss\" --fix"
+    },
+    "author": "",
+    "license": "ISC",
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged && env-status-version-validate",
+        "commit-msg": "commitlint -e $GIT_PARAMS"
+      }
+    },
+    "lint-staged": {
+      "linters": {
+        "*.{js,ts,tsx}": [
+          "eslint",
+          "git add"
+        ],
+        "*.{css,scss}": [
+          "stylelint"
+        ]
+      },
+      "ignore": [
+        "bin/server.js",
+        "src/lib/**/*",
+        "mlz-pack.js",
+        "*.test.(j|t)s"
+      ]
+    },
+    "dependencies": {
+      "@cmao/mlz-config": "^1.0.2",
+      "qiankun": "^2.4.0",
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6",
+      "react-router": "^5.1.2",
+      "react-router-dom": "^5.1.2"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "^8.2.0",
+      "@commitlint/config-conventional": "^8.2.0",
+      "@frontend/yuumi": "0.3.0",
+      "@mlz/lint": "^1.1.10",
+      "@mlz/pack": "1.0.19",
+      "@types/classnames": "^2.2.9",
+      "@types/node": "^12.6.2",
+      "@types/react-css-modules": "^4.6.2",
+      "@types/react-dom": "^16.9.2",
+      "@types/react-loadable": "^5.5.2",
+      "@types/react-redux": "^7.1.4",
+      "@types/react-router": "^5.0.3",
+      "@types/react-router-dom": "^5.1.0",
+      "@types/qrcode": "^1.3.5",
+      "compression": "^1.7.4",
+      "cross-env": "^5.2.1",
+      "env-status": "^0.30.0",
+      "express": "^4.17.1",
+      "fontmin": "^0.9.8",
+      "husky": "^3.0.9",
+      "lint-staged": "^8.0.4",
+      "lodash-webpack-plugin": "^0.11.6",
+      "mlz-lint": "^1.0.2",
+      "stylelint": "^13.12.0",
+      "typescript": "^3.5.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,28 @@
+{
+    "env": "local",
+    "buildtime": {
+      "https": false,
+      "cdn_path": "",
+      "originServer": {
+        "ip": "0.0.0.0",
+        "port": "7101"
+      },
+      "debug": false,
+      "hot": false,
+      "sourceMap": "http://localhost:7101/",
+      "uglify": true,
+      "analyze": false
+    },
+    "runtime":{
+        "service":[
+            {
+                "entry": "http://localhost:7102",
+                "name": "lbk-activity"
+            },
+            {
+                "entry": "http://localhost:7103",
+                "name": "lbk-mobile"
+            }
+        ]
+    }
+  }
