@@ -9,6 +9,8 @@ npm run lbk:install
 npm run lbk:start
 ```
 
+![image-20210401134231848](./img/micro.png)
+
 ### 二、主应用配置说明（lbk-main）
 
 #### 1. loccal.json
@@ -161,7 +163,7 @@ server {
 }
 ```
 
-### 3.聚合服务（运维维护控制）
+### 3.聚合服务（运维维护）
 
 ```dockerfile
 # Dockerfile
